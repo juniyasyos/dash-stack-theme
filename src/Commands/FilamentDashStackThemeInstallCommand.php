@@ -3,6 +3,7 @@
 namespace Nuxtifyts\DashStackTheme\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Process;
 use Symfony\Component\Console\Attribute\AsCommand;
 
@@ -41,7 +42,27 @@ class FilamentDashStackThemeInstallCommand extends Command
             return static::FAILURE;
         }
 
-        $this->info("Using NPM version {$npmVersionResult->output()}");
+        $this->info("Using NPM version {$npmVersionResult->output()} to installed dependencies.");
+
+        $npmInstallResult = Process::run('npm install tailwindcss @tailwindcss/forms @tailwindcss/typography postcss autoprefixer --save-dev');
+
+        $this->info($npmInstallResult->output());
+
+        $postcssConfigPath = base_path('postcss.config.js');
+
+        if (! File::exists($postcssConfigPath)) {
+            $this->info('No postcss.config.js file found. Creating one for you...');
+
+            File::copy(__DIR__.'/../../stubs/postcss.config.js', $postcssConfigPath);
+
+            $this->info('postcss.config.js file created.');
+        }
+
+        $this->info('Running NPM build...');
+        
+        $npmBuildResult = Process::run('npm install && npm run build');
+
+        $this->info($npmBuildResult->output());
 
         return static::SUCCESS;
     }
