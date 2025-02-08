@@ -2,26 +2,20 @@
 
 namespace Nuxtifyts\DashStackTheme;
 
-use Illuminate\Support\ServiceProvider;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Nuxtifyts\DashStackTheme\Console\FilamentDashStackThemeInstall;
 
-class DashStackThemeServiceProvider extends ServiceProvider
+class DashStackThemeServiceProvider extends PackageServiceProvider
 {
     protected const CONFIG_FILE_NAME = 'filament-dash-stack-theme';
 
-    protected const CONFIG_FILE_NAME_FULL = self::CONFIG_FILE_NAME.'.php';
-
-    public function register(): void
+    public function configurePackage(Package $package): void
     {
-        $this->mergeConfigFrom(path: $this->configFilePath(), key: self::CONFIG_FILE_NAME);
-
-        $this->publishes(
-            paths: [$this->configFilePath() => config_path(self::CONFIG_FILE_NAME_FULL)],
-            groups: 'filament-dash-stack-theme-config'
-        );
-    }
-
-    private function configFilePath(): string
-    {
-        return __DIR__.'/../config/'.self::CONFIG_FILE_NAME_FULL;
+        $package
+            ->name('nuxtifyts/dash-stack-theme')
+            ->hasConfigFile(self::CONFIG_FILE_NAME)
+            ->hasViews()
+            ->hasCommand(FilamentDashStackThemeInstall::class);
     }
 }
