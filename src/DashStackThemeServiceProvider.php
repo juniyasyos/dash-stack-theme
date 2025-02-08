@@ -22,6 +22,6 @@ class DashStackThemeServiceProvider extends ServiceProvider
 
     private function configFilePath(): string
     {
-        return __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.self::CONFIG_FILE_NAME_FULL;
+        return __DIR__.'/../config/'.self::CONFIG_FILE_NAME_FULL;
     }
 }
