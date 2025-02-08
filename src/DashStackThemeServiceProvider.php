@@ -4,7 +4,7 @@ namespace Nuxtifyts\DashStackTheme;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Nuxtifyts\DashStackTheme\Console\FilamentDashStackThemeInstall;
+use Nuxtifyts\DashStackTheme\Console\FilamentDashStackThemeInstallCommand;
 
 class DashStackThemeServiceProvider extends PackageServiceProvider
 {
@@ -16,6 +16,6 @@ class DashStackThemeServiceProvider extends PackageServiceProvider
             ->name('nuxtifyts/dash-stack-theme')
             ->hasConfigFile(self::CONFIG_FILE_NAME)
             ->hasViews()
-            ->hasCommand(FilamentDashStackThemeInstall::class);
+            ->hasCommand(FilamentDashStackThemeInstallCommand::class);
     }
 }

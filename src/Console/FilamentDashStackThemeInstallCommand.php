@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Process;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand('filament-dash-stack-theme:install')]
-class FilamentDashStackThemeInstall extends Command
+class FilamentDashStackThemeInstallCommand extends Command
 {
     /** 
      * @var 0 
