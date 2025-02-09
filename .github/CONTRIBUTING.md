@@ -40,7 +40,9 @@ Before submitting a pull request:
 
 If the project maintainer has any additional requirements, you will find them listed here.
 
-- **Laravel Coding Standard** - The easiest way to apply the conventions is to run `composer run-script pint`.
+- **[Laravel Coding Style](https://laravel.com/docs/11.x/contributions#coding-style)** - The easiest way to apply the conventions is to run `composer run-script pint`.
+
+- **[LaraStan](https://github.com/larastan/larastan)** - Make sure your code is analyzed by running `composer run-script phpstan`. 
 
 - **Add tests!** - Your patch won't be accepted if it doesn't have tests.
 
