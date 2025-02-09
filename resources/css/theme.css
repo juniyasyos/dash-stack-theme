@@ -87,6 +87,17 @@
                 }
             }
             /* Global Search Component End */
+
+            /* Dropdown Panel Component Start */
+            .fi-dropdown-panel {
+                @apply rounded-2xl ring-0 ring-offset-0;
+                @apply bg-white dark:bg-[#273142];
+
+                > .fi-dropdown-header, > .fi-dropdown-list {
+                    @apply px-4;
+                }
+            }
+            /* Dropdown Panel Component End */
         }
     }
 }
@@ -234,3 +245,69 @@
     }
 }
 /* Sidebar End */
+
+/** Page Component Start */
+.fi-page {
+    > section {
+        @apply gap-y-6;
+    }
+
+    .fi-header {
+        @apply pb-6;
+        @apply border-b-[1px] border-b-[#E0E0E0] dark:border-white/10;
+    }
+    
+    /* Table Component Start */
+    .fi-ta-content {
+        > .fi-ta-table {
+            > thead {
+                @apply bg-[#FCFDFD] dark:bg-[#323D4E];
+            }
+
+            > tbody {
+                @apply bg-white dark:bg-[#273142];
+
+                > tr.fi-ta-row {
+                    > td.fi-ta-cell {
+                        @apply py-1;
+                    }
+                }
+            }
+        }
+    }
+    /* Table Component End */
+
+    /* Navigation Component Start */
+    .fi-pagination {
+        @apply bg-white dark:bg-[#273142];
+    }
+    /* Navigation Component End */
+
+    /* Button Component Start */
+    .fi-btn {
+        @apply rounded-lg py-3 px-5;
+    }
+    /* Button Component End */
+
+    .fi-fo-field-wrp {
+        label.fi-fo-field-wrp-label {
+            > span {
+                /* @apply text-md; */
+                @apply text-base;
+            }
+        }
+
+        /* Input Component Start */
+        .fi-input-wrp {
+            @apply bg-gray-50 dark:bg-[#323D4E];
+    
+            > .fi-input-wrp-input {
+                > input.fi-input {
+                    @apply py-3 border-gray-200 dark:border-white/10;
+                }
+            }
+        }
+        /* Input Component End */
+    }
+}
+/* Page Component End */

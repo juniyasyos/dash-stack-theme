@@ -2,10 +2,10 @@
 
 namespace Nuxtifyts\DashStackTheme;
 
+use Illuminate\Console\Command;
 use Nuxtifyts\DashStackTheme\Commands\FilamentDashStackThemeInstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Illuminate\Console\Command;
 
 class DashStackThemeServiceProvider extends PackageServiceProvider
 {
@@ -22,13 +22,13 @@ class DashStackThemeServiceProvider extends PackageServiceProvider
             ->hasCommands(...self::commandsClassStrings());
     }
 
-    /** 
-     *  @return list<class-string<Command>>
+    /**
+     * @return list<class-string<Command>>
      */
     protected static function commandsClassStrings(): array
     {
         return [
-            FilamentDashStackThemeInstallCommand::class
+            FilamentDashStackThemeInstallCommand::class,
         ];
     }
 }
