@@ -2,9 +2,9 @@
 
 namespace Nuxtifyts\DashStackTheme;
 
+use Nuxtifyts\DashStackTheme\Commands\FilamentDashStackThemeInstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Nuxtifyts\DashStackTheme\Commands\FilamentDashStackThemeInstallCommand;
 
 class DashStackThemeServiceProvider extends PackageServiceProvider
 {
