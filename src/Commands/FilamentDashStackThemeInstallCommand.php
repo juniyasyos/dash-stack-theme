@@ -69,7 +69,7 @@ class FilamentDashStackThemeInstallCommand extends Command
         $this->info('Publishing assets...');
 
         $this->call('vendor:publish', [
-            '--tag' => DashStackThemeServiceProvider::PACKAGE_NAME . '-assets',
+            '--tag' => DashStackThemeServiceProvider::PACKAGE_NAME.'-assets',
             '--force' => true,
         ]);
 
