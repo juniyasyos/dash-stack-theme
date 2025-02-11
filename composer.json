@@ -24,7 +24,8 @@
     },
     "require-dev": {
         "larastan/larastan": "^3.0",
-        "laravel/pint": "^1.20"
+        "laravel/pint": "^1.20",
+        "phpunit/phpunit": "^11.0"
     },
     "license": "MIT",
     "autoload": {
@@ -32,8 +33,14 @@
             "Nuxtifyts\\DashStackTheme\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Nuxtifyts\\DashStackTheme\\Tests\\": "tests/"
+        }
+    },
     "scripts": {
         "phpstan": "vendor/bin/phpstan analyse --configuration phpstan.neon --memory-limit=1G",
-        "pint": "vendor/bin/pint src/"
+        "pint": "vendor/bin/pint src/",
+        "test": "XDEBUG_MODE=coverage vendor/bin/phpunit --configuration=phpunit.xml --testsuite=Unit"
     }
 }

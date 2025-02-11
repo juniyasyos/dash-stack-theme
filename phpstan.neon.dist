@@ -1,10 +1,9 @@
 includes:
     - vendor/larastan/larastan/extension.neon
-    - vendor/nestbot/carbon/extension.neon
 
 parameters:
     paths:
         - src/
         - tests/
 
-    level: 5
+    level: 10
