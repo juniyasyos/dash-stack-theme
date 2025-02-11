@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import '/vendor/filament/filament/resources/css/theme.css';
+@import 'login.css';
 
 @config 'tailwind.config.js';
 
@@ -236,10 +237,10 @@
                         @apply bg-primary-600;
                     }
                 }
-            }
-    
-            > .fi-sidebar-group:not(:first-child) {
-                @apply border-t-[0.6px] border-t-[#E0E0E0] dark:border-none;
+
+                &:not(:first-child) {
+                    @apply border-t-[0.6px] border-t-[#E0E0E0] dark:border-none;
+                }
             }
         }
     }
@@ -282,32 +283,54 @@
         @apply bg-white dark:bg-[#273142];
     }
     /* Navigation Component End */
-
-    /* Button Component Start */
-    .fi-btn {
-        @apply rounded-lg py-3 px-5;
-    }
-    /* Button Component End */
-
-    .fi-fo-field-wrp {
-        label.fi-fo-field-wrp-label {
-            > span {
-                /* @apply text-md; */
-                @apply text-base;
-            }
-        }
-
-        /* Input Component Start */
-        .fi-input-wrp {
-            @apply bg-gray-50 dark:bg-[#323D4E];
-    
-            > .fi-input-wrp-input {
-                > input.fi-input {
-                    @apply py-3 border-gray-200 dark:border-white/10;
-                }
-            }
-        }
-        /* Input Component End */
-    }
 }
 /* Page Component End */
+
+/* Button Component Start */
+.fi-btn {
+    @apply rounded-lg py-3 px-5;
+
+    .fi-btn-label {
+        @apply text-lg;
+    }
+}
+/* Button Component End */
+
+/* Checkbox Component Start */
+.fi-checkbox-input  {
+    @apply w-5 h-5 ring-white dark:ring-white/10 rounded-s-md;
+
+    &:checked {
+        @apply bg-transparent dark:bg-transparent ring-1;
+    }
+
+    &:focus, &:active, &:checked, &:focus:checked {
+        @apply outline-none ring-white dark:ring-white/10;
+    }
+}
+/* Checkbox Component End */
+
+.fi-logo {
+    @apply text-3xl;
+}
+
+/* Input Component Start */
+.fi-fo-field-wrp {
+    label.fi-fo-field-wrp-label {
+        > span {
+            /* @apply text-md; */
+            @apply text-base;
+        }
+    }
+}
+
+.fi-input-wrp {
+    @apply bg-gray-50 dark:bg-[#323D4E];
+
+    > .fi-input-wrp-input {
+        > input.fi-input {
+            @apply py-3 border-gray-200 dark:border-white/10;
+        }
+    }
+}
+/* Input Component End */

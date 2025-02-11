@@ -9,7 +9,7 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class DashStackThemeServiceProvider extends PackageServiceProvider
 {
-    protected const PACKAGE_NAME = 'nuxtifyts/dash-stack-theme';
+    public const PACKAGE_NAME = 'nuxtifyts/dash-stack-theme';
 
     protected const CONFIG_FILE_NAME = 'filament-dash-stack-theme';
 
@@ -19,6 +19,7 @@ class DashStackThemeServiceProvider extends PackageServiceProvider
             ->name(self::PACKAGE_NAME)
             ->hasConfigFile(self::CONFIG_FILE_NAME)
             ->hasViews()
+            ->hasAssets()
             ->hasCommands(...self::commandsClassStrings());
     }
 

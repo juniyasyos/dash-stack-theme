@@ -5,6 +5,7 @@ namespace Nuxtifyts\DashStackTheme\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Process;
+use Nuxtifyts\DashStackTheme\DashStackThemeServiceProvider;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand('filament-dash-stack-theme:install')]
@@ -64,6 +65,13 @@ class FilamentDashStackThemeInstallCommand extends Command
         $npmBuildResult = Process::run('npm install && npm run build');
 
         $this->info($npmBuildResult->output());
+
+        $this->info('Publishing assets...');
+
+        $this->call('vendor:publish', [
+            '--tag' => DashStackThemeServiceProvider::PACKAGE_NAME . '-assets',
+            '--force' => true,
+        ]);
 
         return static::SUCCESS;
     }
