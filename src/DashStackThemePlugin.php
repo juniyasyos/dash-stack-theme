@@ -20,11 +20,11 @@ class DashStackThemePlugin implements Plugin
     public function register(Panel $panel): void
     {
         $panel
-            ->colors([ // @phpstan-ignore-line
+            ->colors([
                 'primary' => config('filament-dash-stack-theme.default-colors.primary'),
             ])
-            ->sidebarCollapsibleOnDesktop(config('filament-dash-stack-theme.side-bar-collapsable-on-desktop')) // @phpstan-ignore-line
-            ->collapsibleNavigationGroups(config('filament-dash-stack-theme.collapsible-navigation-groups')) // @phpstan-ignore-line
+            ->sidebarCollapsibleOnDesktop(config('filament-dash-stack-theme.side-bar-collapsable-on-desktop'))
+            ->collapsibleNavigationGroups(config('filament-dash-stack-theme.collapsible-navigation-groups'))
             ->viteTheme('vendor/nuxtifyts/dash-stack-theme/resources/css/theme.css');
     }
 

@@ -42,5 +42,12 @@
         "phpstan": "vendor/bin/phpstan analyse --configuration phpstan.neon --memory-limit=1G",
         "pint": "vendor/bin/pint src/",
         "test": "XDEBUG_MODE=coverage vendor/bin/phpunit --configuration=phpunit.xml --testsuite=Unit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Nuxtifyts\\DashStackTheme\\DashStackThemeServiceProvider"
+            ]
+        }
     }
 }
