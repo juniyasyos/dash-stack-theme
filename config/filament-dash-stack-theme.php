@@ -10,4 +10,6 @@ return [
     'side-bar-collapsable-on-desktop' => true,
 
     'collapsible-navigation-groups' => false,
+
+    'breadcrumbs' => false,
 ];

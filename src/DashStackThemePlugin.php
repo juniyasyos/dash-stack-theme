@@ -25,6 +25,7 @@ class DashStackThemePlugin implements Plugin
             ])
             ->sidebarCollapsibleOnDesktop(config('filament-dash-stack-theme.side-bar-collapsable-on-desktop'))
             ->collapsibleNavigationGroups(config('filament-dash-stack-theme.collapsible-navigation-groups'))
+            ->breadcrumbs(config('filament-dash-stack-theme.breadcrumbs'))
             ->viteTheme('vendor/nuxtifyts/dash-stack-theme/resources/css/theme.css');
     }
 
