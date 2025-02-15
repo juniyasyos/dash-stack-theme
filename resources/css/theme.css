@@ -344,21 +344,57 @@
             @apply p-3 border-0;
 
             .fi-ta-table {
-                 thead {
-                    .fi-ta-actions-header-cell, 
-                    .fi-ta-header-cell,
-                    .fi-ta-cell {
-                        @apply bg-primary-100/10 dark:bg-[var(--ds-dark-bg-tertiary-color)];
-                    }
-                    
-                    .fi-ta-header-cell:first-child,
-                    .fi-ta-cell {
-                        @apply rounded-l-2xl;
-                    }
+                thead {
+                    > tr {
+                        .fi-ta-actions-header-cell, 
+                        .fi-ta-header-cell,
+                        .fi-ta-cell {
+                            @apply bg-primary-100/10 dark:bg-[var(--ds-dark-bg-tertiary-color)];
+                        }
 
-                    .fi-ta-header-cell:last-child,
-                    .fi-ta-actions-header-cell {
-                        @apply rounded-r-2xl;
+                        &:only-child {
+                            .fi-ta-header-cell:first-child,
+                            .fi-ta-cell {
+                                @apply rounded-l-2xl;
+                            }
+
+                            .fi-ta-header-cell:last-child,
+                            .fi-ta-actions-header-cell {
+                                @apply rounded-r-2xl;
+                            }
+                        }
+
+                        &:not(:only-child) {
+                            @apply bg-primary-100/10 dark:bg-[var(--ds-dark-bg-tertiary-color)];
+
+                            &:first-child {
+                                > th {
+                                    @apply border-none bg-primary-100/10;
+
+                                    &:first-child {
+                                        @apply rounded-tl-2xl;
+                                    }
+
+                                    &:last-child {
+                                        @apply rounded-tr-2xl;
+                                    }
+                                }
+                            }
+
+                            &:last-child {
+                                > th {
+                                    @apply border-none;
+
+                                    &:first-child {
+                                        @apply rounded-bl-2xl;
+                                    }
+
+                                    &:last-child {
+                                        @apply rounded-br-2xl;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
 
