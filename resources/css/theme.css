@@ -493,6 +493,14 @@
 }
 /* Button Component End */
 
+/* Notification Icon Button Start */
+.fi-topbar-database-notifications-btn {
+    .fi-icon-btn-icon {
+        @apply dark:text-white/75;
+    }
+}
+/* Notification Icon Button End */
+
 /* Icon Button Component Start */
 .fi-icon-btn {
     > .fi-icon-btn-badge-ctn {
