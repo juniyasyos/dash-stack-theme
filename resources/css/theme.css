@@ -181,6 +181,10 @@
                             > .fi-sidebar-item-icon, > .fi-sidebar-item-label {
                                 @apply text-white;
                             }
+
+                            .fi-badge {
+                                @apply bg-transparent bg-primary-700 text-white ring-white font-extrabold;
+                            }
                         }
                     }
     
