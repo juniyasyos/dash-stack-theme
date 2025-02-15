@@ -183,7 +183,7 @@
                             }
 
                             .fi-badge {
-                                @apply bg-transparent bg-primary-700 text-white ring-white font-extrabold;
+                                @apply dark:bg-primary-700 dark:text-white ring-white font-extrabold;
                             }
                         }
                     }
