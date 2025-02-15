@@ -10,6 +10,20 @@
     --ds-dark-bg-secondary-color: #273142;
 }
 
+/* Scrollbar Start */
+::-webkit-scrollbar {
+    @apply w-2 h-2 bg-gray-200 dark:bg-[var(--ds-dark-bg-primary-color)];
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-200 dark:bg-[var(--ds-dark-bg-primary-color)];
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-slate-700;
+}
+/* Scrollbar End */
+
 .fi-body {
     @apply bg-[#F5F6FA] dark:bg-[var(--ds-dark-bg-primary-color)];
 }
@@ -331,11 +345,13 @@
             .fi-ta-table {
                 thead {
                     .fi-ta-actions-header-cell, 
-                    .fi-ta-header-cell {
+                    .fi-ta-header-cell,
+                    .fi-ta-cell {
                         @apply bg-primary-100/10;
                     }
                     
-                    .fi-ta-header-cell:first-child {
+                    .fi-ta-header-cell:first-child,
+                    .fi-ta-cell {
                         @apply rounded-l-2xl;
                     }
 
