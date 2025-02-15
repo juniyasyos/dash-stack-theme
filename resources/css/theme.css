@@ -8,6 +8,7 @@
     --font-family: 'Nunito Sans', sans-serif !important;
     --ds-dark-bg-primary-color: #1B2431;
     --ds-dark-bg-secondary-color: #273142;
+    --ds-dark-bg-tertiary-color: #323D4E;
 }
 
 /* Scrollbar Start */
@@ -34,7 +35,7 @@
 
 .fi-wi-widget {
     > .fi-section {
-        @apply ring-offset-0 ring-0 dark:ring-1 dark:ring-offset-0 dark:ring-[#313D4F];
+        @apply ring-offset-0 ring-0 dark:ring-1 dark:ring-offset-0 dark:ring-white/10;
         @apply rounded-2xl;
         @apply dark:bg-[var(--ds-dark-bg-secondary-color)];
 
@@ -66,7 +67,7 @@
 
                 .fi-global-search-field {
                     > .fi-input-wrp {
-                        @apply rounded-full bg-[#F5F6FA] dark:bg-[#323D4E];
+                        @apply rounded-full bg-[#F5F6FA] dark:bg-[var(--ds-dark-bg-tertiary-color)];
 
                         > .fi-input-wrp-prefix {
                             > .fi-input-wrp-icon {
@@ -87,13 +88,13 @@
                     @apply start-0 rounded-2xl ring-0 ring-offset-0;
 
                     .fi-global-search-result-group {
-                        @apply p-2 bg-white dark:bg-[#273142];
+                        @apply p-2 bg-white dark:bg-[var(--ds-dark-bg-secondary-color)];
 
                         > div:first-child {
-                            @apply border-none bg-white dark:bg-[#273142];
+                            @apply border-none bg-white dark:bg-[var(--ds-dark-bg-secondary-color)];
 
                             > h3 {
-                                @apply text-lg bg-white dark:bg-[#273142];
+                                @apply text-lg bg-white dark:bg-[var(--ds-dark-bg-secondary-color)];
                             }
                         }
 
@@ -107,7 +108,7 @@
                     }
 
                     .fi-global-search-no-results-message {
-                        @apply bg-white dark:bg-[#273142];
+                        @apply bg-white dark:bg-[var(--ds-dark-bg-secondary-color)];
                     }
                 }
             }
@@ -116,7 +117,7 @@
             /* Dropdown Panel Component Start */
             .fi-dropdown-panel {
                 @apply rounded-2xl ring-0 ring-offset-0;
-                @apply bg-white dark:bg-[#273142];
+                @apply bg-white dark:bg-[var(--ds-dark-bg-secondary-color)];
 
                 > .fi-dropdown-header, > .fi-dropdown-list {
                     @apply px-4;
@@ -307,11 +308,11 @@
     .fi-ta-content {
         > .fi-ta-table {
             > thead {
-                @apply bg-[#FCFDFD] dark:bg-[#323D4E];
+                @apply bg-[#FCFDFD] dark:bg-[var(--ds-dark-bg-tertiary-color)];
             }
 
             > tbody {
-                @apply bg-white dark:bg-[#273142];
+                @apply bg-white dark:bg-[var(--ds-dark-bg-secondary-color)];
 
                 > tr.fi-ta-row {
                     > td.fi-ta-cell {
@@ -343,11 +344,11 @@
             @apply p-3 border-0;
 
             .fi-ta-table {
-                thead {
+                 thead {
                     .fi-ta-actions-header-cell, 
                     .fi-ta-header-cell,
                     .fi-ta-cell {
-                        @apply bg-primary-100/10;
+                        @apply bg-primary-100/10 dark:bg-[var(--ds-dark-bg-tertiary-color)];
                     }
                     
                     .fi-ta-header-cell:first-child,
@@ -364,16 +365,78 @@
                 tbody {
                     @apply border-0;
 
-                    /*   */
+                    .fi-ta-row:not(:first-child) {
+                        @apply border-none;
+
+                        &.fi-ta-summary-header-row {
+                            & > td:first-child {
+                                @apply rounded-l-2xl;
+                            }
+
+                            & > td:last-child {
+                                @apply rounded-r-2xl;
+                            }
+                        }
+                    }
+
+                    .fi-ta-cell {
+                        &:first-child {
+                            @apply rounded-l-2xl;
+                        }
+
+                        &:last-child {
+                            @apply rounded-r-2xl;
+                        }
+
+                        .fi-input-wrp {
+                            @apply mt-3;
+                        }
+                    }
                 }
             }
+            
+            /* Table Component 2.1 Start */
+            > div {
+                &:first-child {
+                    @apply rounded-xl bg-gray-400/10 dark:bg-[var(--ds-dark-bg-tertiary-color)];
+                }
+
+                &:nth-child(2) {
+                    @apply border-none;
+
+                    /* Table Component 2.1.1 Start */
+                    &:not(.fi-ta-content-grid) {
+                        @apply bg-white dark:bg-[var(--ds-dark-bg-secondary-color)];
+
+                        & > div {
+                            @apply rounded-xl;
+                        }
+                    }
+                    /* Table Component 2.1.1 End */
+
+                    /* Table Component 2.1.2 Start */
+                    &.fi-ta-content-grid {
+                        @apply gap-6;
+
+                        .fi-ta-record {
+                            @apply rounded-3xl ring-0 shadow-sm bg-gray-50 dark:bg-[var(--ds-dark-bg-tertiary-color)];
+                        }
+                    }
+                    /* Table Component 2.1.2 End */
+                }
+            }
+
+            .fi-ta-record {
+                @apply bg-white hover:bg-gray-100 dark:bg-[var(--ds-dark-bg-secondary-color)] dark:hover:bg-[var(--ds-dark-bg-tertiary-color)];
+            }
+            /* Table Component 2.1 End */
         }
     }
     /* Table Component 2 End */
 
     /* Navigation Component Start */
     .fi-pagination {
-        @apply bg-white dark:bg-[#273142];
+        @apply bg-white dark:bg-[var(--ds-dark-bg-secondary-color)];
     }
     /* Navigation Component End */
 }
@@ -381,7 +444,7 @@
 
 /* Button Component Start */
 .fi-btn {
-    @apply rounded-lg py-3 px-5;
+    @apply rounded-lg py-2 px-4;
 
     .fi-btn-label {
         @apply text-lg;
@@ -425,7 +488,7 @@
 }
 
 .fi-input-wrp {
-    @apply bg-gray-50 dark:bg-[#323D4E];
+    @apply bg-gray-50 dark:bg-[var(--ds-dark-bg-tertiary-color)];
 
     > .fi-input-wrp-input {
         > input.fi-input {
@@ -469,3 +532,9 @@
     }
 }
 /* Modal Component End */
+
+/* Tabs Component Start */
+.fi-tabs {
+    @apply ring-0 dark:bg-[var(--ds-dark-bg-secondary-color)] dark:border dark:border-white/10;
+}
+/* Tabs Component End */
