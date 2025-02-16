@@ -1,6 +1,13 @@
 FilamentPHP DashStack Theme
 =
 
+![GitHub License](https://img.shields.io/github/license/Fa-BRAIK/dash-stack-theme)
+![Packagist Version](https://img.shields.io/packagist/v/nuxtifyts/dash-stack-theme)
+![PhpStan Level](https://img.shields.io/badge/PHPStan-level%207-brightgreen.svg)
+[![PHPStan](https://github.com/Fa-BRAIK/dash-stack-theme/actions/workflows/phpstan.yml/badge.svg)](https://github.com/Fa-BRAIK/dash-stack-theme/actions/workflows/phpstan.yml)
+[![Laravel Pint](https://github.com/Fa-BRAIK/dash-stack-theme/actions/workflows/pint.yml/badge.svg)](https://github.com/Fa-BRAIK/dash-stack-theme/actions/workflows/pint.yml)
+[![PHPUnit](https://github.com/Fa-BRAIK/dash-stack-theme/actions/workflows/pr-tests.yml/badge.svg)](https://github.com/Fa-BRAIK/dash-stack-theme/actions/workflows/pr-tests.yml)
+
 ![Dash Stack Theme Light/Dark](https://github.com/Fa-BRAIK/dash-stack-theme/blob/main/assets/dash_stack_theme.png?raw=true)
 
 > Tested on [Filamentphp demo app](https://github.com/filamentphp/demo)
