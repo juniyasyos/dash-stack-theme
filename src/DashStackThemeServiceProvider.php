@@ -44,7 +44,7 @@ class DashStackThemeServiceProvider extends PackageServiceProvider
                 ),
             ]);
         }
-        
+
         return $this;
     }
 
