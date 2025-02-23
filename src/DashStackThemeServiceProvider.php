@@ -30,8 +30,12 @@ class DashStackThemeServiceProvider extends PackageServiceProvider
      */
     public function boot()
     {
-        parent::boot();
+        return parent::boot()
+            ->bootDefaultFont();
+    }
 
+    protected function bootDefaultFont(): static
+    {
         if (config('filament-dash-stack-theme.use-default-font')) {
             FilamentAsset::register([
                 Css::make(
@@ -40,7 +44,7 @@ class DashStackThemeServiceProvider extends PackageServiceProvider
                 ),
             ]);
         }
-
+        
         return $this;
     }
 
