@@ -27,6 +27,10 @@ class DashStackThemePlugin implements Plugin
             ->collapsibleNavigationGroups(config('filament-dash-stack-theme.collapsible-navigation-groups'))
             ->breadcrumbs(config('filament-dash-stack-theme.breadcrumbs'))
             ->viteTheme('vendor/nuxtifyts/dash-stack-theme/resources/css/theme.css');
+
+        if (config('filament-dash-stack-theme.use-default-font')) {
+            $panel->font('Nunito Sans');
+        }
     }
 
     public function boot(Panel $panel): void

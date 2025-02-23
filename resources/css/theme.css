@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import '/vendor/filament/filament/resources/css/theme.css';
 @import 'login.css';
 
 @config 'tailwind.config.js';
 
 :root {
-    --font-family: 'Nunito Sans', sans-serif !important;
     --ds-dark-bg-primary-color: #1B2431;
     --ds-dark-bg-secondary-color: #273142;
     --ds-dark-bg-tertiary-color: #323D4E;
@@ -152,7 +150,7 @@
     
             > .fi-sidebar-group  {
                 > .fi-sidebar-group-button {
-                    @apply pl-14 pr-6 mt-2;
+                    @apply pl-14 pr-6 mt-2 rtl:pl-6 rtl:pr-14;
     
                     > .fi-icon-btn, > .fi-sidebar-group-label {
                         @apply text-gray-600 dark:text-gray-300;
@@ -161,8 +159,7 @@
     
                 > .fi-sidebar-group-items {
                     > .fi-sidebar-item {
-                        @apply relative;
-                        @apply px-10;
+                        @apply relative px-10 rtl:pr-14 rtl:pl-6;
     
                         > .fi-sidebar-item-button {
                             @apply bg-white dark:bg-[var(--ds-dark-bg-secondary-color)];
@@ -190,7 +187,7 @@
     
                     > .fi-sidebar-item::after {
                         content: '';
-                        @apply absolute left-0 top-0 w-4 h-full rounded-lg;
+                        @apply absolute left-0 rtl:right-4 top-0 w-4 h-full rounded-lg;
                     }
     
                     > .fi-sidebar-item.fi-sidebar-item-active::after {
@@ -228,7 +225,7 @@
     
             > .fi-sidebar-group  {
                 > .fi-sidebar-group-button {
-                    @apply pl-14 pr-6 mt-2;
+                    @apply pl-14 pr-6 mt-2 rtl:pl-6 rtl:pr-14;
     
                     > .fi-icon-btn, > .fi-sidebar-group-label {
                         @apply text-gray-600 dark:text-gray-300;
@@ -237,7 +234,7 @@
     
                 > .fi-sidebar-group-items {
                     > .fi-sidebar-item {
-                        @apply relative;
+                        @apply relative rtl:pr-8;
 
                         > .fi-sidebar-item-button {
                             @apply bg-white dark:bg-[var(--ds-dark-bg-secondary-color)];
@@ -259,7 +256,7 @@
      
                     > .fi-sidebar-item::after {
                         content: '';
-                        @apply absolute left-0 top-0 w-4 h-full rounded-lg;
+                        @apply absolute left-0 rtl:right-4 top-0 w-4 h-full rounded-lg;
                     }
     
                     > .fi-sidebar-item.fi-sidebar-item-active::after {
@@ -359,12 +356,12 @@
                         &:only-child {
                             .fi-ta-header-cell:first-child,
                             .fi-ta-cell {
-                                @apply rounded-l-2xl;
+                                @apply ltr:rounded-l-2xl rtl:rounded-r-2xl;
                             }
 
                             .fi-ta-header-cell:last-child,
                             .fi-ta-actions-header-cell {
-                                @apply rounded-r-2xl;
+                                @apply ltr:rounded-r-2xl rtl:rounded-l-2xl;
                             }
                         }
 
@@ -376,11 +373,11 @@
                                     @apply border-none bg-primary-100/10;
 
                                     &:first-child {
-                                        @apply rounded-tl-2xl;
+                                        @apply ltr:rounded-tl-2xl rtl:rounded-tr-2xl;
                                     }
 
                                     &:last-child {
-                                        @apply rounded-tr-2xl;
+                                        @apply ltr:rounded-tr-2xl rtl:rounded-tl-2xl;
                                     }
                                 }
                             }
@@ -390,11 +387,11 @@
                                     @apply border-none;
 
                                     &:first-child {
-                                        @apply rounded-bl-2xl;
+                                        @apply ltr:rounded-bl-2xl rtl:rounded-br-2xl;
                                     }
 
                                     &:last-child {
-                                        @apply rounded-br-2xl;
+                                        @apply ltr:rounded-br-2xl rtl:rounded-bl-2xl;
                                     }
                                 }
                             }
@@ -410,22 +407,22 @@
 
                         &.fi-ta-summary-header-row {
                             & > td:first-child {
-                                @apply rounded-l-2xl;
+                                @apply ltr:rounded-l-2xl rtl:rounded-r-2xl;
                             }
 
                             & > td:last-child {
-                                @apply rounded-r-2xl;
+                                @apply ltr:rounded-r-2xl rtl:rounded-l-2xl;
                             }
                         }
                     }
 
                     .fi-ta-cell {
                         &:first-child {
-                            @apply rounded-l-2xl;
+                            @apply ltr:rounded-l-2xl rtl:rounded-r-2xl;
                         }
 
                         &:last-child {
-                            @apply rounded-r-2xl;
+                            @apply ltr:rounded-r-2xl rtl:rounded-l-2xl;
                         }
 
                         .fi-input-wrp {
@@ -551,6 +548,12 @@
 .fi-modal-window {
     @apply bg-white dark:bg-[var(--ds-dark-bg-secondary-color)];
 
+    &:not(.fi-modal-slide-over-window) {
+        > .fi-modal-header {
+            @apply rounded-tl-2xl rounded-tr-2xl;
+        }
+    }
+
     > .fi-modal-header {
         @apply bg-white dark:bg-[var(--ds-dark-bg-secondary-color)];
 
@@ -570,7 +573,7 @@
                 @apply border-none my-2;
 
                 &::before {
-                    @apply rounded-lg w-3 -translate-x-1/2 h-[90%] top-1/2 -translate-y-1/2;
+                    @apply rounded-lg w-3 -translate-x-1/2 rtl:translate-x-1/2 h-[90%] top-1/2 -translate-y-1/2 left-0;
                 }
             }
             /* Notification Wrapper End */
