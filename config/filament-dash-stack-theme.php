@@ -12,4 +12,9 @@ return [
     'collapsible-navigation-groups' => false,
 
     'breadcrumbs' => false,
+
+    /** 
+     * Nunito Sans is the default font for the theme.
+     */
+    'use-default-font' => true,
 ];

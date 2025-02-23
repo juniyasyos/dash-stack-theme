@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 @import '/vendor/filament/filament/resources/css/theme.css';
 @import 'login.css';
 
 @config 'tailwind.config.js';
 
 :root {
-    --font-family: 'Nunito Sans', sans-serif !important;
     --ds-dark-bg-primary-color: #1B2431;
     --ds-dark-bg-secondary-color: #273142;
     --ds-dark-bg-tertiary-color: #323D4E;
