@@ -3,11 +3,11 @@
 namespace Nuxtifyts\DashStackTheme;
 
 use Filament\Support\Assets\Css;
+use Filament\Support\Facades\FilamentAsset;
 use Illuminate\Console\Command;
 use Nuxtifyts\DashStackTheme\Commands\FilamentDashStackThemeInstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Filament\Support\Facades\FilamentAsset;
 
 class DashStackThemeServiceProvider extends PackageServiceProvider
 {
@@ -37,7 +37,7 @@ class DashStackThemeServiceProvider extends PackageServiceProvider
                 Css::make(
                     id: 'dash-stack-theme-font',
                     path: 'https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap'
-                )
+                ),
             ]);
         }
 

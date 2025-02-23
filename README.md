@@ -74,16 +74,8 @@ return [
     'collapsible-navigation-groups' => false,
 
     'breadcrumbs' => false,
-
-    /** 
-     * Nunito Sans is the default font for the theme.
-     */
-    'use-default-font' => true,
 ];
 ```
-
-> **Note:** Default Theme for Dash Stack theme is [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans),
-> In order to disable it, you need to publish the config file, and set `use-default-font` to `false`.
 
 Upcoming Features
 -
