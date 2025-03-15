@@ -1,6 +1,6 @@
 <?php
 
-namespace Nuxtifyts\DashStackTheme\Support\Colors;
+namespace Juniyasyos\DashStackTheme\Support\Colors;
 
 readonly class Color
 {

@@ -1,6 +1,6 @@
 <?php
 
-use Nuxtifyts\DashStackTheme\Support\Colors\Color;
+use Juniyasyos\DashStackTheme\Support\Colors\Color;
 
 return [
     'default-colors' => [

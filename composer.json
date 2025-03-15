@@ -1,5 +1,5 @@
 {
-    "name": "nuxtifyts/dash-stack-theme",
+    "name": "juniyasyos/dash-stack-theme",
     "description": "DashStack theme for filament php",
     "keywords": [
         "php",
@@ -13,6 +13,10 @@
         {
             "name": "Farouk Braik",
             "email": "faroukbraik17@gmail.com"
+        },
+        {
+            "name": "Ahmad Ilyas",
+            "email": "ahmadilyasdahlan@gmail.com"
         }
     ],
     "type": "library",
@@ -30,12 +34,12 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Nuxtifyts\\DashStackTheme\\": "src/"
+            "Juniyasyos\\DashStackTheme\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Nuxtifyts\\DashStackTheme\\Tests\\": "tests/"
+            "Juniyasyos\\DashStackTheme\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -46,7 +50,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Nuxtifyts\\DashStackTheme\\DashStackThemeServiceProvider"
+                "Juniyasyos\\DashStackTheme\\DashStackThemeServiceProvider"
             ]
         }
     }

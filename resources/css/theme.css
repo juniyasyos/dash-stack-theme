@@ -457,7 +457,7 @@
 
                         .fi-ta-record {
                             @apply rounded-3xl ring-0 shadow-sm bg-gray-50 dark:bg-[var(--ds-dark-bg-tertiary-color)];
-                            @apply bg-[url(/vendor/nuxtifyts/dash-stack-theme/card-bg-pattern.svg)];
+                            @apply bg-[url(/vendor/juniyasyos/dash-stack-theme/card-bg-pattern.svg)];
                         }
                     }
                     /* Table Component 2.1.2 End */

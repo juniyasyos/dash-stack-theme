@@ -1,17 +1,17 @@
 <?php
 
-namespace Nuxtifyts\DashStackTheme;
+namespace Juniyasyos\DashStackTheme;
 
 use Filament\Support\Assets\Css;
 use Filament\Support\Facades\FilamentAsset;
 use Illuminate\Console\Command;
-use Nuxtifyts\DashStackTheme\Commands\FilamentDashStackThemeInstallCommand;
+use Juniyasyos\DashStackTheme\Commands\FilamentDashStackThemeInstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class DashStackThemeServiceProvider extends PackageServiceProvider
 {
-    public const PACKAGE_NAME = 'nuxtifyts/dash-stack-theme';
+    public const PACKAGE_NAME = 'juniyasyos/dash-stack-theme';
 
     protected const CONFIG_FILE_NAME = 'filament-dash-stack-theme';
 
@@ -30,8 +30,16 @@ class DashStackThemeServiceProvider extends PackageServiceProvider
      */
     public function boot()
     {
-        return parent::boot()
-            ->bootDefaultFont();
+        parent::boot();
+        $this->bootDefaultFont();
+
+
+        // 🔹 Publikasi aset CSS
+        $this->publishes([
+            __DIR__ . '/../resources/css' => public_path('css/dash-stack-theme'),
+        ], 'dash-stack-theme-assets');
+
+        return $this;
     }
 
     protected function bootDefaultFont(): static

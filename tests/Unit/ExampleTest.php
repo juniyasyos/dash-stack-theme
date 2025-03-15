@@ -1,6 +1,6 @@
 <?php
 
-namespace Nuxtifyts\DashStackTheme\Tests\Unit;
+namespace Juniyasyos\DashStackTheme\Tests\Unit;
 
 use PHPUnit\Framework\Attributes\Test;
 

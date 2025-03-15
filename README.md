@@ -2,7 +2,7 @@ FilamentPHP DashStack Theme
 =
 
 ![GitHub License](https://img.shields.io/github/license/Fa-BRAIK/dash-stack-theme)
-![Packagist Version](https://img.shields.io/packagist/v/nuxtifyts/dash-stack-theme)
+![Packagist Version](https://img.shields.io/packagist/v/juniyasyos/dash-stack-theme)
 ![PhpStan Level](https://img.shields.io/badge/PHPStan-level%207-brightgreen.svg)
 [![PHPStan](https://github.com/Fa-BRAIK/dash-stack-theme/actions/workflows/phpstan.yml/badge.svg)](https://github.com/Fa-BRAIK/dash-stack-theme/actions/workflows/phpstan.yml)
 [![Laravel Pint](https://github.com/Fa-BRAIK/dash-stack-theme/actions/workflows/pint.yml/badge.svg)](https://github.com/Fa-BRAIK/dash-stack-theme/actions/workflows/pint.yml)
@@ -31,7 +31,7 @@ Installation
 #### Step 1: Install this package using composer:
 
 ```bash
-composer require nuxtifyts/dash-stack-theme
+composer require juniyasyos/dash-stack-theme
 ```
 
 #### Step 2: Run install command:
@@ -47,7 +47,7 @@ php artisan filament-dash-stack-theme:install
 Within your targeted panel provider, you can now use and register dash stack theme plugin:
 
 ```php
-use Nuxtifyts\DashStackTheme\DashStackThemePlugin;
+use Juniyasyos\DashStackTheme\DashStackThemePlugin;
 
 // ...
 
@@ -62,7 +62,7 @@ DashStack theme comes by default with a configuration for  primary color used, a
 ```php
 // filament-dash-stack-theme.php
 
-use Nuxtifyts\DashStackTheme\Support\Colors\Color;
+use Juniyasyos\DashStackTheme\Support\Colors\Color;
 
 return [
     'default-colors' => [
