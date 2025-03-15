@@ -11,9 +11,9 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class DashStackThemeServiceProvider extends PackageServiceProvider
 {
-    public const PACKAGE_NAME = 'juniyasyos/dash-stack-theme';
+    public const PACKAGE_NAME = 'juniyasyos/dash-stack-theme-juniyasyos';
 
-    protected const CONFIG_FILE_NAME = 'filament-dash-stack-theme';
+    protected const CONFIG_FILE_NAME = 'filament-dash-stack-theme-juniyasyos';
 
     public function configurePackage(Package $package): void
     {
@@ -36,18 +36,18 @@ class DashStackThemeServiceProvider extends PackageServiceProvider
 
         // 🔹 Publikasi aset CSS
         $this->publishes([
-            __DIR__ . '/../resources/css' => public_path('css/dash-stack-theme'),
-        ], 'dash-stack-theme-assets');
+            __DIR__ . '/../resources/css' => public_path('css/dash-stack-theme-juniyasyos'),
+        ], 'dash-stack-theme-juniyasyos-assets');
 
         return $this;
     }
 
     protected function bootDefaultFont(): static
     {
-        if (config('filament-dash-stack-theme.use-default-font')) {
+        if (config('filament-dash-stack-theme-juniyasyos.use-default-font')) {
             FilamentAsset::register([
                 Css::make(
-                    id: 'dash-stack-theme-font',
+                    id: 'dash-stack-theme-juniyasyos-font',
                     path: 'https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap'
                 ),
             ]);

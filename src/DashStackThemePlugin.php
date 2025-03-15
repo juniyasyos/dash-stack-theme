@@ -14,21 +14,21 @@ class DashStackThemePlugin implements Plugin
 
     public function getId(): string
     {
-        return 'juniyasyos/filament-dash-stack-theme';
+        return 'juniyasyos/filament-dash-stack-theme-juniyasyos';
     }
 
     public function register(Panel $panel): void
     {
         $panel
             ->colors([
-                'primary' => config('filament-dash-stack-theme.default-colors.primary'),
+                'primary' => config('filament-dash-stack-theme-juniyasyos.default-colors.primary'),
             ])
-            ->sidebarCollapsibleOnDesktop(config('filament-dash-stack-theme.side-bar-collapsable-on-desktop'))
-            ->collapsibleNavigationGroups(config('filament-dash-stack-theme.collapsible-navigation-groups'))
-            ->breadcrumbs(config('filament-dash-stack-theme.breadcrumbs'))
-            ->viteTheme('vendor/juniyasyos/dash-stack-theme/resources/css/theme.css');
+            ->sidebarCollapsibleOnDesktop(config('filament-dash-stack-theme-juniyasyos.side-bar-collapsable-on-desktop'))
+            ->collapsibleNavigationGroups(config('filament-dash-stack-theme-juniyasyos.collapsible-navigation-groups'))
+            ->breadcrumbs(config('filament-dash-stack-theme-juniyasyos.breadcrumbs'))
+            ->viteTheme('vendor/juniyasyos/dash-stack-theme-juniyasyos/resources/css/theme.css');
 
-        if (config('filament-dash-stack-theme.use-default-font')) {
+        if (config('filament-dash-stack-theme-juniyasyos.use-default-font')) {
             $panel->font('Nunito Sans');
         }
     }

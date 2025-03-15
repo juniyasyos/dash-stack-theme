@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Process;
 use Juniyasyos\DashStackTheme\DashStackThemeServiceProvider;
 use Symfony\Component\Console\Attribute\AsCommand;
 
-#[AsCommand('filament-dash-stack-theme:install')]
+#[AsCommand('filament-dash-stack-theme-juniyasyos:install')]
 class FilamentDashStackThemeInstallCommand extends Command
 {
     /**
@@ -24,7 +24,7 @@ class FilamentDashStackThemeInstallCommand extends Command
     /**
      * @var string
      */
-    protected $signature = 'filament-dash-stack-theme:install';
+    protected $signature = 'filament-dash-stack-theme-juniyasyos:install';
 
     /**
      * @var string
