@@ -1,50 +1,40 @@
-FilamentPHP DashStack Theme
-=
+# FilamentPHP DashStack Theme
 
 ![GitHub License](https://img.shields.io/github/license/Fa-BRAIK/dash-stack-theme-juniyasyos)
 ![Packagist Version](https://img.shields.io/packagist/v/juniyasyos/dash-stack-theme-juniyasyos)
 ![PhpStan Level](https://img.shields.io/badge/PHPStan-level%207-brightgreen.svg)
-[![PHPStan](https://github.com/Fa-BRAIK/dash-stack-theme-juniyasyos/actions/workflows/phpstan.yml/badge.svg)](https://github.com/Fa-BRAIK/dash-stack-theme-juniyasyos/actions/workflows/phpstan.yml)
-[![Laravel Pint](https://github.com/Fa-BRAIK/dash-stack-theme-juniyasyos/actions/workflows/pint.yml/badge.svg)](https://github.com/Fa-BRAIK/dash-stack-theme-juniyasyos/actions/workflows/pint.yml)
-[![PHPUnit](https://github.com/Fa-BRAIK/dash-stack-theme-juniyasyos/actions/workflows/pr-tests.yml/badge.svg)](https://github.com/Fa-BRAIK/dash-stack-theme-juniyasyos/actions/workflows/pr-tests.yml)
+[![PHPStan](https://github.com/Fa-BRAIK/dash-stack-theme/actions/workflows/phpstan.yml/badge.svg)](https://github.com/Fa-BRAIK/dash-stack-theme/actions/workflows/phpstan.yml)
+[![Laravel Pint](https://github.com/Fa-BRAIK/dash-stack-theme/actions/workflows/pint.yml/badge.svg)](https://github.com/Fa-BRAIK/dash-stack-theme/actions/workflows/pint.yml)
+[![PHPUnit](https://github.com/Fa-BRAIK/dash-stack-theme/actions/workflows/pr-tests.yml/badge.svg)](https://github.com/Fa-BRAIK/dash-stack-theme/actions/workflows/pr-tests.yml)
 
-![Dash Stack Theme Light/Dark](https://github.com/Fa-BRAIK/dash-stack-theme-juniyasyos/blob/main/assets/dash_stack_theme.png?raw=true)
+![Dash Stack Theme Light/Dark](https://github.com/Fa-BRAIK/dash-stack-theme/blob/main/assets/dash_stack_theme.png?raw=true)
 
 > Tested on [Filamentphp demo app](https://github.com/filamentphp/demo)
 
-Acknowledgements
--
+## Acknowledgements
 
 > Name based and Design inspired from [DashStack Theme](https://www.figma.com/community/file/1324762163080748317/dashstack-free-admin-dashboard-ui-kit-admin-dashboard-ui-kit-admin-dashboard). Big thanks for [Seju](https://www.figma.com/@sejal_ui_ux) for this amazing design.
 
-Documentation
--
+---
 
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Upcoming Features](#upcoming-features)
-- [Appearance](#appearance)
+## 🚀 Installation & Usage (Auto Mode)
 
-Installation
--
-
-#### Step 1: Install this package using composer:
+### **Step 1: Install the Package**
+Install the package using Composer:
 
 ```bash
 composer require juniyasyos/dash-stack-theme-juniyasyos
 ```
 
-#### Step 2: Run install command:
-
-Running this command will install required npm packages (If they're not already installed), and it will publish its assets as well.
+### **Step 2: Run Install Command**
+This command will install required npm packages (if not already installed) and publish its assets.
 
 ```bash
 php artisan filament-dash-stack-theme-juniyasyos:install
 ```
 
-#### Step 3: Register filament plugin:
-
-Within your targeted panel provider, you can now use and register dash stack theme plugin:
+### **Step 3: Register Filament Plugin**
+Within your targeted panel provider, register DashStack Theme Plugin:
 
 ```php
 use Juniyasyos\DashStackTheme\DashStackThemePlugin;
@@ -54,14 +44,50 @@ use Juniyasyos\DashStackTheme\DashStackThemePlugin;
 $panel->plugin(DashStackThemePlugin::make());
 ```
 
-Configuration
--
+---
 
-DashStack theme comes by default with a configuration for  primary color used, and predefined dashboard configs for the theme, if needed to be altered, you can always publish vendor config file and change them however you see fit: 
+## 🔧 Development Mode
+
+### **Step 1: Publish Assets Manually**
+Run the following commands to publish the assets:
+
+```bash
+php artisan vendor:publish --tag=dash-stack-theme-juniyasyos-assets --force
+php artisan vendor:publish --tag=dash-stack-theme-juniyasyos-dist --force
+```
+
+### **Step 2: Configure Vite Theme in Filament Panel**
+Modify your **Filament Panel** configuration and set the `viteTheme` path to:
 
 ```php
-// filament-dash-stack-theme-juniyasyos.php
+->viteTheme('resources/css/filament/dash-stack-theme-juniyasyos/theme.css')
+```
 
+### **Step 3: Build the Assets**
+After making any modifications, run the following command to compile the assets:
+
+```bash
+npm run build
+```
+
+### **Development Notes**
+- Ensure that `vite.config.js` includes the correct input path for the theme CSS.
+- After publishing assets, you may need to clear the cache using `php artisan config:clear`.
+- If the styles are not reflecting, check if `npm run dev` or `npm run build` has been executed properly.
+
+---
+
+## ⚙️ Configuration
+
+DashStack theme comes by default with a configuration for primary color and predefined dashboard settings. To customize, publish the config file:
+
+```bash
+php artisan vendor:publish --tag=filament-dash-stack-theme-juniyasyos-config
+```
+
+Example configuration (`config/filament-dash-stack-theme-juniyasyos.php`):
+
+```php
 use Juniyasyos\DashStackTheme\Support\Colors\Color;
 
 return [
@@ -70,9 +96,7 @@ return [
     ],
 
     'side-bar-collapsable-on-desktop' => true,
-
     'collapsible-navigation-groups' => false,
-
     'breadcrumbs' => false,
 
     /**
@@ -82,31 +106,31 @@ return [
 ];
 ```
 
-> **note**: The default font used for Dash Stack Theme is Nunito Sans, you can
-> disable this behavior by publish the config file of this package, and 
-> setting `use-default-font` to `false`.
+> **Note:** The default font used for Dash Stack Theme is Nunito Sans. You can disable this by setting `use-default-font` to `false` in the config file.
 
-Upcoming Features
--
+---
 
-Eventually these components will be added to the package, if you have any suggestions/feedback, if you have a feature request, please don't hesitate to do so in [GitHub](https://github.com/Fa-BRAIK/dash-stack-theme-juniyasyos).
+## 📌 Upcoming Features
 
-#### List of upcoming changes:
+If you have feature requests or suggestions, feel free to submit them on [GitHub](https://github.com/Fa-BRAIK/dash-stack-theme/issues).
 
+#### Planned Updates:
 - Date / DateTime / DateRange component
-- Select component (Could be only UI changes for this one) 
+- Enhanced Select component (UI improvements)
 
-Appearance
--
+---
+
+## 🎨 Appearance
 
 - [Login Page](#login-page)
 - [Dashboard](#dashboard-page)
 - [Global Search](#global-search)
 - [Notifications](#notification-modal)
-- [User menu](#user-menu)
+- [User Menu](#user-menu)
 - [Resource Page](#resource-page)
 - [Grid Table](#grid-table)
 - [Forms](#forms)
+
 
 #### Login Page
 
@@ -121,14 +145,14 @@ Appearance
     <tr>
       <td>
         <img
-            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme-juniyasyos/main/assets/screenshots/login_page_light.png"
+            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme/main/assets/screenshots/login_page_light.png"
             width="100%" 
             alt="Login Page Light"
         />
       </td>
       <td>
         <img 
-            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme-juniyasyos/main/assets/screenshots/login_page_dark.png" 
+            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme/main/assets/screenshots/login_page_dark.png" 
             width="100%" 
             alt="Login Page Dark"
         />
@@ -150,14 +174,14 @@ Appearance
     <tr>
       <td>
         <img
-            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme-juniyasyos/main/assets/screenshots/dashboard_page_light.png"
+            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme/main/assets/screenshots/dashboard_page_light.png"
             width="100%" 
             alt="Dashboard Page Light"
         />
       </td>
       <td>
         <img 
-            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme-juniyasyos/main/assets/screenshots/dashboard_page_dark.png" 
+            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme/main/assets/screenshots/dashboard_page_dark.png" 
             width="100%" 
             alt="Dashboard Page Dark"
         />
@@ -179,14 +203,14 @@ Appearance
     <tr>
       <td>
         <img
-            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme-juniyasyos/main/assets/screenshots/global_search_light.png"
+            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme/main/assets/screenshots/global_search_light.png"
             width="100%" 
             alt="Global Search Light"
         />
       </td>
       <td>
         <img 
-            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme-juniyasyos/main/assets/screenshots/global_search_dark.png" 
+            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme/main/assets/screenshots/global_search_dark.png" 
             width="100%" 
             alt="Global Search Dark"
         />
@@ -208,14 +232,14 @@ Appearance
     <tr>
       <td>
         <img
-            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme-juniyasyos/main/assets/screenshots/notification_modal_light.png"
+            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme/main/assets/screenshots/notification_modal_light.png"
             width="100%" 
             alt="Notification Modal Light"
         />
       </td>
       <td>
         <img 
-            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme-juniyasyos/main/assets/screenshots/notification_modal_dark.png" 
+            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme/main/assets/screenshots/notification_modal_dark.png" 
             width="100%" 
             alt="Notification Modal Dark"
         />
@@ -237,14 +261,14 @@ Appearance
     <tr>
       <td>
         <img
-            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme-juniyasyos/main/assets/screenshots/user_menu_light.png"
+            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme/main/assets/screenshots/user_menu_light.png"
             width="100%" 
             alt="User Menu Light"
         />
       </td>
       <td>
         <img 
-            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme-juniyasyos/main/assets/screenshots/user_menu_dark.png" 
+            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme/main/assets/screenshots/user_menu_dark.png" 
             width="100%" 
             alt="User Menu Dark"
         />
@@ -266,14 +290,14 @@ Appearance
     <tr>
       <td>
         <img
-            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme-juniyasyos/main/assets/screenshots/resources_page_light.png"
+            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme/main/assets/screenshots/resources_page_light.png"
             width="100%" 
             alt="Resource Page Light"
         />
       </td>
       <td>
         <img 
-            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme-juniyasyos/main/assets/screenshots/resources_page_dark.png" 
+            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme/main/assets/screenshots/resources_page_dark.png" 
             width="100%" 
             alt="Resource Page Dark"
         />
@@ -295,14 +319,14 @@ Appearance
     <tr>
       <td>
         <img
-            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme-juniyasyos/main/assets/screenshots/grid_table_light.png"
+            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme/main/assets/screenshots/grid_table_light.png"
             width="100%" 
             alt="Grid Table Light"
         />
       </td>
       <td>
         <img 
-            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme-juniyasyos/main/assets/screenshots/grid_table_dark.png" 
+            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme/main/assets/screenshots/grid_table_dark.png" 
             width="100%" 
             alt="Grid Table Dark"
         />
@@ -324,14 +348,14 @@ Appearance
     <tr>
       <td>
         <img
-            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme-juniyasyos/main/assets/screenshots/form_light.png"
+            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme/main/assets/screenshots/form_light.png"
             width="100%" 
             alt="Forms Light"
         />
       </td>
       <td>
         <img 
-            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme-juniyasyos/main/assets/screenshots/form_dark.png" 
+            src="https://raw.githubusercontent.com/Fa-BRAIK/dash-stack-theme/main/assets/screenshots/form_dark.png" 
             width="100%" 
             alt="Forms Dark"
         />

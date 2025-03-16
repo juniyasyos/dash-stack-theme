@@ -1,8 +1,6 @@
 @import '/vendor/filament/filament/resources/css/theme.css';
 @import 'login.css';
 
-@config 'tailwind.config.js';
-
 :root {
     --ds-dark-bg-primary-color: #1B2431;
     --ds-dark-bg-secondary-color: #273142;
@@ -457,7 +455,7 @@
 
                         .fi-ta-record {
                             @apply rounded-3xl ring-0 shadow-sm bg-gray-50 dark:bg-[var(--ds-dark-bg-tertiary-color)];
-                            @apply bg-[url(/resource/assets/dash-stack-theme-juniyasyos/card-bg-pattern.svg)];
+                            @apply bg-[url(/resource/assets/dash-stack-theme/card-bg-pattern.svg)];
                         }
                     }
                     /* Table Component 2.1.2 End */

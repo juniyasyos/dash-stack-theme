@@ -25,12 +25,7 @@ class DashStackThemePlugin implements Plugin
             ])
             ->sidebarCollapsibleOnDesktop(config('filament-dash-stack-theme-juniyasyos.side-bar-collapsable-on-desktop'))
             ->collapsibleNavigationGroups(config('filament-dash-stack-theme-juniyasyos.collapsible-navigation-groups'))
-            ->breadcrumbs(config('filament-dash-stack-theme-juniyasyos.breadcrumbs'))
-            ->viteTheme(
-                config('filament-dash-stack-theme-juniyasyos.theme') === 'custom'
-                ? 'resources/css/filament/admin/theme.css'
-                : 'vendor/juniyasyos/dash-stack-theme-juniyasyos/resources/css/theme.css'
-            );
+            ->breadcrumbs(config('filament-dash-stack-theme-juniyasyos.breadcrumbs'));
 
         if (config('filament-dash-stack-theme-juniyasyos.use-default-font')) {
             $panel->font('Nunito Sans');
