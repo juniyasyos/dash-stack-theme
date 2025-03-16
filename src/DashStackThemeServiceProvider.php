@@ -31,17 +31,23 @@ class DashStackThemeServiceProvider extends PackageServiceProvider
     public function boot()
     {
         parent::boot();
+        
         $this->bootDefaultFont();
 
 
         // 🔹 Publikasi aset CSS
         $this->publishes([
-            __DIR__ . '/../resources/css' => public_path('css/dash-stack-theme-juniyasyos'),
-        ], 'dash-stack-theme-juniyasyos-assets');
+            __DIR__ . '/../resources/css' => resource_path('css/dash-stack-theme-juniyasyos'),
+        ], 'dash-stack-theme-juniyasyos-assets');        
 
         return $this;
     }
-
+    
+    /**
+     * bootDefaultFont
+     *
+     * @return static
+     */
     protected function bootDefaultFont(): static
     {
         if (config('filament-dash-stack-theme-juniyasyos.use-default-font')) {
