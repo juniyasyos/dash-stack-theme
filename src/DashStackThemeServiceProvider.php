@@ -31,18 +31,22 @@ class DashStackThemeServiceProvider extends PackageServiceProvider
     public function boot()
     {
         parent::boot();
-        
+
         $this->bootDefaultFont();
 
 
         // 🔹 Publikasi aset CSS
         $this->publishes([
-            __DIR__ . '/../resources/css' => resource_path('css/dash-stack-theme-juniyasyos'),
-        ], 'dash-stack-theme-juniyasyos-assets');        
+            __DIR__ . '/../resources/css-publish' => resource_path('css/filament/dash-stack-theme-juniyasyos'),
+        ], 'dash-stack-theme-juniyasyos-assets');
+
+        $this->publishes([
+            __DIR__ . '/../resources/dist' => resource_path('assets/dash-stack-theme'),
+        ], 'dash-stack-theme-juniyasyos-dist');
 
         return $this;
     }
-    
+
     /**
      * bootDefaultFont
      *

@@ -17,4 +17,6 @@ return [
      * Nunito Sans is the default font for the theme.
      */
     'use-default-font' => true,
+
+    'theme' => 'default',
 ];

@@ -9,7 +9,7 @@ class DashStackThemePlugin implements Plugin
 {
     public static function make(): self
     {
-        return new self;
+        return new self();
     }
 
     public function getId(): string
@@ -26,7 +26,11 @@ class DashStackThemePlugin implements Plugin
             ->sidebarCollapsibleOnDesktop(config('filament-dash-stack-theme-juniyasyos.side-bar-collapsable-on-desktop'))
             ->collapsibleNavigationGroups(config('filament-dash-stack-theme-juniyasyos.collapsible-navigation-groups'))
             ->breadcrumbs(config('filament-dash-stack-theme-juniyasyos.breadcrumbs'))
-            ->viteTheme('vendor/juniyasyos/dash-stack-theme-juniyasyos/resources/css/theme.css');
+            ->viteTheme(
+                config('filament-dash-stack-theme-juniyasyos.theme') === 'custom'
+                ? 'resources/css/filament/admin/theme.css'
+                : 'vendor/juniyasyos/dash-stack-theme-juniyasyos/resources/css/theme.css'
+            );
 
         if (config('filament-dash-stack-theme-juniyasyos.use-default-font')) {
             $panel->font('Nunito Sans');
