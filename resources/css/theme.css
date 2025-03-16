@@ -76,7 +76,7 @@
                         > .fi-input-wrp-input {
                             > input.fi-input {
                                 @apply placeholder:text-gray-600 dark:placeholder:text-gray-300;
-                                @apply w-40 sm:w-48 md:w-56 lg:w-64 xl:min-w-64; /* Responsif */
+                                @apply w-40 sm:w-48 md:w-56 lg:w-64 xl:min-w-64; /* Responsive */
                             }
                         }
                     }
