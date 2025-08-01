@@ -55,10 +55,18 @@ class FilamentDashStackThemeInstallCommand extends Command
         if (! File::exists($postcssConfigPath)) {
             $this->info('No postcss.config.js file found. Creating one for you...');
 
-            File::copy(__DIR__.'/../../stubs/postcss.config.js', $postcssConfigPath);
+            File::put($postcssConfigPath, <<<JS
+                module.exports = {
+                    plugins: {
+                        tailwindcss: {},
+                        autoprefixer: {},
+                    },
+                };
+                JS);
 
             $this->info('postcss.config.js file created.');
         }
+
 
         $this->info('Running NPM build...');
 
@@ -69,7 +77,7 @@ class FilamentDashStackThemeInstallCommand extends Command
         $this->info('Publishing assets...');
 
         $this->call('vendor:publish', [
-            '--tag' => DashStackThemeServiceProvider::PACKAGE_NAME.'-assets',
+            '--tag' => DashStackThemeServiceProvider::PACKAGE_NAME . '-assets',
             '--force' => true,
         ]);
 
